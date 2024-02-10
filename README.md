@@ -1,3 +1,25 @@
+Normal:
+
+- creating  docker image:
+
+docker build -t 2048-game .
+
+- running container:
+
+docker run -d --name 2048-game-container -p 12000:80 \
+ -v $(pwd)/default.cong:/etc/nginx/conf.d/default.conf 2048-game
+
+default.conf is included to the repo:
+
+server {
+  listen 80 default;
+  server_name _;
+  root /var/www/myapp;
+  index index.html;
+}
+
+
+
 # Overview
 
 Sample javascript application implementing the classic [2048 game](https://en.wikipedia.org/wiki/2048_(video_game)). Main project is based on the [game-2048 library](https://www.npmjs.com/package/game-2048) and [Webpack](https://webpack.js.org).
