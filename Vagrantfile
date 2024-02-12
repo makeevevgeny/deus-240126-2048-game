@@ -79,18 +79,8 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
          
-#    wget https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.xz
-#    sudo mkdir -p /usr/local/lib/nodejs
-#    sudo tar -xJvf node-v20.11.0-linux-x64.tar.xz -C /usr/local/lib/nodejs
-
-#    sudo apt-get update && apt-get -y install nginx net-tools git
-#    export PATH='/usr/local/lib/nodejs/node-v20.11.0-linux-x64/bin:$PATH'
-
-#    git clone https://gitfront.io/r/deusops/JnacRhR4iD8q/2048-game.git /tmp/2048-game
     git clone https://github.com/makeevevgeny/deus-240126-2048-game.git /tmp/2048-game
     sudo /tmp/2048-game/site-config.sh
-#    sudo npm install --prefix /tmp/2048-game/ --include=dev
-#    sudo npm run build --prefix /tmp/2048-game/
-#    sudo npm start --prefix /tmp/2048-game/
+
   SHELL
 end
